@@ -51,6 +51,27 @@
   font-size: 20px;
 }
 
+.activeTab {
+  /*layout*/
+  display: flex;
+  align-items: center;
+  margin-bottom: 9px;
+
+  /*text*/
+  color: #fff;
+  font-size: 20px;
+  width: 220px;
+  height: 40px;
+  background-color: #424242;
+  border-radius: 6px;
+}
+
+.activeTab img {
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+
 .tab img {
   /*layout*/
   margin-right: 7px;
@@ -58,5 +79,11 @@
   /*size*/
   width: 24px;
   height: 24px;
+}
 
+
+.link {
+  display: flex;
+  text-decoration: none;
+  color: white;
 }
