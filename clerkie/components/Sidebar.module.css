@@ -1,0 +1,62 @@
+.sidebar {
+  /*layout*/
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  /*size*/
+  width: 250px;
+  min-height: 100vh;
+
+  /*background*/
+  background-color: #091928;
+}
+
+.clerkieTab {
+  /*layout*/
+  display: flex;
+  align-items: center;
+  top: 31.04px;
+  left: 25px;
+  margin-bottom: 46px;
+
+  /*text*/
+  color: #fff;
+  font-size: 20px;
+}
+
+.tab :hover{
+  cursor: pointer;
+}
+
+.clerkieTab img {
+  /*layout*/
+  margin-right: 11px;
+
+  /*size*/
+  width: 20px;
+  height: 20.01px;
+}
+
+
+
+.tab {
+  /*layout*/
+  display: flex;
+  align-items: center;
+  margin-bottom: 9px;
+
+  /*text*/
+  color: #fff;
+  font-size: 20px;
+}
+
+.tab img {
+  /*layout*/
+  margin-right: 7px;
+
+  /*size*/
+  width: 24px;
+  height: 24px;
+
+}

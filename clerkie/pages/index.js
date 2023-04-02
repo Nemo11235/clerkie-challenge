@@ -1,20 +1,25 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
+import styles from "./index.module.css";
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <Layout home>
+    <div className={styles.home}>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Home</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-    </Layout>
+
+      <Sidebar />
+      <div className={styles.rightContainer}>
+        <Header title="Home" />
+
+        <div className={styles.welcomeMsgContainer}>
+          <h1 className={styles.welcomeMsg}>
+            Welcome to the Clerkie Challenge!
+          </h1>
+        </div>
+      </div>
+    </div>
   );
 }
