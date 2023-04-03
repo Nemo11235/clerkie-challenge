@@ -42,7 +42,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 46px;
-    height: 100vh;
+    height: auto;
 }
 
 .filterContainer {
@@ -103,11 +103,4 @@
     color: #FFFFFF;
 }
 
-.userContainer {
-    margin-bottom: 15px;
-    width: 1050px;
-    height: 114px;
-    border: 1px solid #D7D7D7;
-    border-radius: 6px;
-}
 

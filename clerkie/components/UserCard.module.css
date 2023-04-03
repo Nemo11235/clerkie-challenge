@@ -1,0 +1,58 @@
+.userCard {
+    margin-bottom: 15px;
+    width: 1050px;
+    height: 114px;
+    border: 1px solid #D7D7D7;
+    border-radius: 6px;
+}
+
+.firstLine {
+    margin-top: 32px;
+    margin-left: 30px;
+    display: flex;
+}
+
+
+.secondLine {
+    margin-top: 12px;
+    margin-left: 30px;
+    display: flex;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ABABAB;
+}
+
+.secondLine span {
+    margin-right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middleDot {
+    width: 4px;
+    height: 4px;
+}
+
+.close {
+    width: 94px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    color: #3399FF;
+    background-color: #DFEFFF;
+    border-radius: 21px;
+}
+
+.name {
+    margin-right: 10px;
+
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    
+    color: #000000;
+}

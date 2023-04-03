@@ -1,6 +1,7 @@
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import FilterWindow from "../../components/FilterWindow";
+import UserCard from "../../components/UserCard";
 import styles from "./FriendsPage.module.css";
 import { useState } from "react";
 
@@ -67,8 +68,12 @@ export default function FriendsPage() {
               />
             </div>
           )}
-
-          <div className={styles.userContainer}>hi</div>
+          <UserCard
+            name="Allen"
+            email="lzx11235@gmail.com"
+            phone="(415)539-8238"
+            relationship="Close Friends"
+          />
         </div>
       </div>
     </div>
