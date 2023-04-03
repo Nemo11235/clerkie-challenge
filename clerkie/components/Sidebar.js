@@ -8,12 +8,12 @@ function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <div className={styles.clerkieTab}>
-        <img src="/clerkie-logo.png" alt="Logo 1" />
+        <img src="/clerkie-logo.png" alt="clerkie logo" />
         <span>Clerkie Challenge</span>
       </div>
       <div className={router.pathname === "/" ? styles.activeTab : styles.tab}>
         <Link className={styles.link} href="/">
-          <img src="/home-icon.png" alt="Logo 2" />
+          <img src="/home-icon.png" alt="home logo" />
           <span>Home</span>
         </Link>
       </div>
@@ -25,7 +25,7 @@ function Sidebar() {
         }
       >
         <Link className={styles.link} href="/FriendsPages/FriendsPage">
-          <img src="/friends-icon.png" alt="Logo 3" />
+          <img src="/friends-icon.png" alt="friends logo" />
           <span>Friends</span>
         </Link>
       </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./FilterWindow.module.css";
 
 const FilterWindow = ({
-  applyFilters,
+  setFilterOptions,
   selectedOptions: initialSelectedOptions,
   toggleFilterWindow,
 }) => {
@@ -12,7 +12,7 @@ const FilterWindow = ({
 
   const categories = ["Close Friends", "Really Close Friends"];
 
-  const toggleOption = (option) => {
+  function toggleOption(option) {
     const isSelected = selectedOptions.includes(option);
     if (isSelected) {
       setSelectedOptions(
@@ -21,16 +21,16 @@ const FilterWindow = ({
     } else {
       setSelectedOptions([...selectedOptions, option]);
     }
-  };
+  }
 
-  const applyFiltersAndClose = () => {
-    applyFilters(selectedOptions);
+  function applyFiltersAndClose() {
+    setFilterOptions(selectedOptions);
     toggleFilterWindow();
-  };
+  }
 
-  const clearAll = () => {
+  function clearFilter() {
     setSelectedOptions([]);
-  };
+  }
 
   return (
     <div className={styles.root}>
@@ -39,7 +39,7 @@ const FilterWindow = ({
           className={
             selectedOptions.length ? styles.clearAllActive : styles.clearAll
           }
-          onClick={clearAll}
+          onClick={clearFilter}
         >
           Clear all
         </span>

@@ -1,9 +1,6 @@
 .root {
-    position: relative;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     width: 320px;
     height: 286px;

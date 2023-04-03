@@ -1,29 +1,16 @@
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
+import FilterWindow from "../../components/FilterWindow";
 import styles from "./FriendsPage.module.css";
 import { useState } from "react";
-import FilterWindow from "../../components/FilterWindow";
 
 export default function FriendsPage() {
   const [showFilterWindow, setShowFilterWindow] = useState(false);
-  const [filterOptions, setFilterOptions] = useState([]);
+  const [selectedOptions, setFilterOptions] = useState([]);
 
   const toggleFilterWindow = () => {
     setShowFilterWindow(!showFilterWindow);
   };
-
-  const applyFilters = (selectedOptions) => {
-    setFilterOptions(selectedOptions);
-    toggleFilterWindow();
-  };
-
-  function handleOptionSelect(option) {
-    if (selectedOptions.includes(option)) {
-      setSelectedOptions(selectedOptions.filter((item) => item !== option));
-    } else {
-      setSelectedOptions([...selectedOptions, option]);
-    }
-  }
 
   function clearFilter() {
     setFilterOptions([]);
@@ -34,34 +21,34 @@ export default function FriendsPage() {
       <div className={styles.rightContainer}>
         <Header title="Friends" />
         <div className={styles.dataContainer}>
-          <div className={styles.btnContainer}>
+          <div className={styles.filterContainer}>
             <button
               className={styles.filterBtn}
               onClick={toggleFilterWindow}
               style={
-                filterOptions.length || showFilterWindow
+                selectedOptions.length || showFilterWindow
                   ? { backgroundColor: "#424242" }
                   : {}
               }
             >
               <img
                 src={
-                  filterOptions.length || showFilterWindow
+                  selectedOptions.length || showFilterWindow
                     ? "/whiteFilter.svg"
                     : "/filter.svg"
                 }
                 alt="filter-icon"
               ></img>
-              {filterOptions.length != 0 && (
+              {selectedOptions.length != 0 && (
                 <span className={styles.filterCount}>
-                  {filterOptions.length ? `${filterOptions.length}` : ""}
+                  {selectedOptions.length ? `${selectedOptions.length}` : ""}
                 </span>
               )}
             </button>
             <div className={styles.verticalLine}></div>
             <button
               className={
-                filterOptions.length
+                selectedOptions.length
                   ? styles.clearAllActive
                   : styles.clearAllBtn
               }
@@ -69,16 +56,19 @@ export default function FriendsPage() {
             >
               Clear all
             </button>
-            {showFilterWindow && (
-              <FilterWindow
-                selectedOptions={filterOptions}
-                onClose={toggleFilterWindow}
-                onOptionSelect={handleOptionSelect}
-                applyFilters={setFilterOptions}
-                toggleFilterWindow={toggleFilterWindow}
-              />
-            )}
           </div>
+          {showFilterWindow && (
+            <div className={styles.filterWindow}>
+              <FilterWindow
+                selectedOptions={selectedOptions}
+                setFilterOptions={setFilterOptions}
+                toggleFilterWindow={toggleFilterWindow}
+                clearFilter={clearFilter}
+              />
+            </div>
+          )}
+
+          <div className={styles.userContainer}>hi</div>
         </div>
       </div>
     </div>
