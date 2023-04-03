@@ -10,3 +10,74 @@
     min-height: 100vh;
 }
 
+.filterBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37px;
+    background: white;
+    border: 1px solid #ababab;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.filterBtn img {
+    width: 19px;
+    height: 20px;
+}
+
+.verticalLine {
+    width: 0;
+    height: 28px; 
+    margin: 0 15px;
+    border: 1px solid #D7D7D7;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37px;
+}
+
+.clearAllBtn {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    color: #D7D7D7;
+
+}
+
+.filterCount {
+    margin-left: 10px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+
+    color: #FFFFFF;
+}
+
+.clearAllActive {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    color: #3399FF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+}

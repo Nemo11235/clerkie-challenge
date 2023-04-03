@@ -1,0 +1,85 @@
+.root {
+    position: relative;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 320px;
+    height: 286px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
+
+.clearAllActive {
+    color: #3399FF;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.clearAll {
+    color: #D7D7D7;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.header img {
+    width: 9px;
+    height: 9px;
+    cursor: pointer;
+}
+
+.title {
+    margin-left: 60px;
+    margin-right: 103px;
+    font-weight: 600;
+    font-size: 16px;   
+}
+
+.divider {
+    width: 318px;
+    border: 1px solid #EAEAEA;
+    border-radius: 2px;
+}
+
+.friendStatus {
+    display: flex;
+    width: 270px;
+    align-items: flex-start;
+    margin-top: 26px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #686868;
+}
+
+
+.filterOption {
+    display: flex;
+    width: 270px;
+    margin-bottom: 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.btnApply {
+    width: 300px;
+    height: 45px;
+    background-color: #424242;
+    border-radius: 6px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}
