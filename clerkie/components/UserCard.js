@@ -1,7 +1,18 @@
 import styles from "./UserCard.module.css";
 
-function UserCard({ name, relationship, email, phone }) {
-  return (
+function UserCard({ isLoading, name, relationship, email, phone }) {
+  return isLoading ? (
+    <div className={styles.userCard}>
+      <div className={styles.loadingFirstRow}>
+        <div className={styles.loadingFirstLeft}></div>
+        <div className={styles.loadingFirstRight}></div>
+      </div>
+      <div className={styles.loadingSecondRow}>
+        <div className={styles.loadingSecondLeft}></div>
+        <div className={styles.loadingSecondRight}></div>
+      </div>
+    </div>
+  ) : (
     <div className={styles.userCard}>
       <div className={styles.firstLine}>
         <span className={styles.name}>{name}</span>

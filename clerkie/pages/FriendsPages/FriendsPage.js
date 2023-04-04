@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 export default function FriendsPage() {
   const [showFilterWindow, setShowFilterWindow] = useState(false);
   const [selectedOptions, setFilterOptions] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const toggleFilterWindow = () => {
     setShowFilterWindow(!showFilterWindow);
@@ -27,6 +28,10 @@ export default function FriendsPage() {
     }
 
     fetchUserData();
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
   return (
@@ -85,6 +90,7 @@ export default function FriendsPage() {
           {selectedOptions == 0 &&
             userData.map((user) => (
               <UserCard
+                isLoading={isLoading}
                 name={user.name}
                 relationship={user.relationship}
                 email={user.email}
@@ -95,6 +101,7 @@ export default function FriendsPage() {
             .filter((user) => selectedOptions.includes(user.relationship))
             .map((user) => (
               <UserCard
+                isLoading={isLoading}
                 name={user.name}
                 relationship={user.relationship}
                 email={user.email}
