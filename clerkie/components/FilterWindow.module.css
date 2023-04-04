@@ -94,9 +94,28 @@
 }
 
 .filterCheckbox {
-    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.filterOption label {
+    cursor: pointer;
+    display: flex;
+}
+
+.filterOption label::before {
+    content: '';
     width: 19px;
     height: 19px;
     border: 1.5px solid #ABABAB;
     border-radius: 2px;
+}
+
+.filterOption input[type='checkbox']:checked + label::before {
+    content: url(../public/check.svg);
+    background-color: #3399FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

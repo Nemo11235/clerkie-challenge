@@ -52,17 +52,28 @@ const FilterWindow = ({
       </div>
       <div className={styles.divider}></div>
       <h2 className={styles.friendStatus}>Friend Status</h2>
-      {categories.map((category) => (
-        <label className={styles.filterOption} key={category}>
-          <span className={styles.filterOptionText}>{category}</span>
-          <input
-            className={styles.filterCheckbox}
-            type="checkbox"
-            checked={selectedOptions.includes(category)}
-            onChange={() => toggleOption(category)}
-          />
-        </label>
-      ))}
+      <div className={styles.filterOption}>
+        <span className={styles.filterOptionText}>{categories[0]}</span>
+        <input
+          id="cb0"
+          className={styles.filterCheckbox}
+          type="checkbox"
+          checked={selectedOptions.includes(categories[0])}
+          onChange={() => toggleOption(categories[0])}
+        ></input>
+        <label for="cb0"></label>
+      </div>
+      <div className={styles.filterOption}>
+        <span className={styles.filterOptionText}>{categories[1]}</span>
+        <input
+          id="cb1"
+          className={styles.filterCheckbox}
+          type="checkbox"
+          checked={selectedOptions.includes(categories[1])}
+          onChange={() => toggleOption(categories[1])}
+        ></input>
+        <label for="cb1"></label>
+      </div>
 
       <button className={styles.btnApply} onClick={applyFiltersAndClose}>
         Apply
