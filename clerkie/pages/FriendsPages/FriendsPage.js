@@ -31,7 +31,7 @@ export default function FriendsPage() {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000);
+    setTimeout(() => setIsLoading(false), 5000);
   }, []);
 
   return (

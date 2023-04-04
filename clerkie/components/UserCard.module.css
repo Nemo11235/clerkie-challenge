@@ -119,3 +119,22 @@
     border-radius: 27px;
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
+
+@keyframes colorTransfer {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+  .loadingFirstRight,
+  .loadingSecondRight,
+  .loadingFirstLeft,
+  .loadingSecondLeft {
+    animation: colorTransfer 1s ease-in-out infinite;
+    background-size: 400% 100%;
+  }
