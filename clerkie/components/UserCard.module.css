@@ -34,8 +34,8 @@
     height: 4px;
 }
 
-.close {
-    width: 94px;
+.closeFriendTag {
+    padding: 0 7px;
     height: 21px;
     display: flex;
     justify-content: center;
@@ -44,6 +44,19 @@
     font-size: 12px;
     color: #3399FF;
     background-color: #DFEFFF;
+    border-radius: 21px;
+}
+
+.superCloseFriendTag {
+    padding: 0 8.75px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    color: #19B444;
+    background-color: #DCFFE6;
     border-radius: 21px;
 }
 

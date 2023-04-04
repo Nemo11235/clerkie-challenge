@@ -6,10 +6,10 @@ function UserCard({ name, email, phone, relationship }) {
       <div className={styles.firstLine}>
         <span className={styles.name}>{name}</span>
         {relationship == "Close Friends" && (
-          <span className={styles.close}>{relationship}</span>
+          <span className={styles.closeFriendTag}>{relationship}</span>
         )}
         {relationship == "Super Close Friends" && (
-          <span className={styles.superClose}>{relationship}</span>
+          <span className={styles.superCloseFriendTag}>{relationship}</span>
         )}
       </div>
       <div className={styles.secondLine}>

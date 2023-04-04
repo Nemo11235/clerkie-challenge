@@ -72,6 +72,29 @@ export default function FriendsPage() {
             name="Allen"
             email="lzx11235@gmail.com"
             phone="(415)539-8238"
+          />
+          <UserCard
+            name="Allen"
+            email="lzx11235@gmail.com"
+            phone="(415)539-8238"
+            relationship="Super Close Friends"
+          />
+          <UserCard
+            name="Allen"
+            email="lzx11235@gmail.com"
+            phone="(415)539-8238"
+            relationship="Close Friends"
+          />
+          <UserCard
+            name="Allen"
+            email="lzx11235@gmail.com"
+            phone="(415)539-8238"
+            relationship="Close Friends"
+          />
+          <UserCard
+            name="Allen"
+            email="lzx11235@gmail.com"
+            phone="(415)539-8238"
             relationship="Close Friends"
           />
         </div>
