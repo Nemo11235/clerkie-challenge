@@ -10,7 +10,7 @@ const FilterWindow = ({
     initialSelectedOptions
   );
 
-  const categories = ["Close Friends", "Really Close Friends"];
+  const categories = ["Close Friends", "Super Close Friends"];
 
   function toggleOption(option) {
     const isSelected = selectedOptions.includes(option);

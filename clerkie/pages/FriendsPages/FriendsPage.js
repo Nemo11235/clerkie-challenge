@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import FilterWindow from "../../components/FilterWindow";
 import UserCard from "../../components/UserCard";
 import styles from "./FriendsPage.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function FriendsPage() {
   const [showFilterWindow, setShowFilterWindow] = useState(false);
@@ -16,6 +16,19 @@ export default function FriendsPage() {
   function clearFilter() {
     setFilterOptions([]);
   }
+
+  const [userData, setUserData] = useState([]);
+
+  useEffect(() => {
+    async function fetchUserData() {
+      const response = await fetch("/users.json");
+      const data = await response.json();
+      setUserData(data);
+    }
+
+    fetchUserData();
+  }, []);
+
   return (
     <div className={styles.friendsPage}>
       <Sidebar />
@@ -68,35 +81,26 @@ export default function FriendsPage() {
               />
             </div>
           )}
-          <UserCard
-            name="Allen"
-            email="lzx11235@gmail.com"
-            phone="(415)539-8238"
-          />
-          <UserCard
-            name="Allen"
-            email="lzx11235@gmail.com"
-            phone="(415)539-8238"
-            relationship="Super Close Friends"
-          />
-          <UserCard
-            name="Allen"
-            email="lzx11235@gmail.com"
-            phone="(415)539-8238"
-            relationship="Close Friends"
-          />
-          <UserCard
-            name="Allen"
-            email="lzx11235@gmail.com"
-            phone="(415)539-8238"
-            relationship="Close Friends"
-          />
-          <UserCard
-            name="Allen"
-            email="lzx11235@gmail.com"
-            phone="(415)539-8238"
-            relationship="Close Friends"
-          />
+
+          {selectedOptions == 0 &&
+            userData.map((user) => (
+              <UserCard
+                name={user.name}
+                relationship={user.relationship}
+                email={user.email}
+                phone={user.phoneNumber}
+              />
+            ))}
+          {userData
+            .filter((user) => selectedOptions.includes(user.relationship))
+            .map((user) => (
+              <UserCard
+                name={user.name}
+                relationship={user.relationship}
+                email={user.email}
+                phone={user.phoneNumber}
+              />
+            ))}
         </div>
       </div>
     </div>

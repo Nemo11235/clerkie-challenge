@@ -1,6 +1,6 @@
 import styles from "./UserCard.module.css";
 
-function UserCard({ name, email, phone, relationship }) {
+function UserCard({ name, relationship, email, phone }) {
   return (
     <div className={styles.userCard}>
       <div className={styles.firstLine}>
