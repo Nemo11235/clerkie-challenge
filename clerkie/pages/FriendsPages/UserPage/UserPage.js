@@ -33,7 +33,9 @@ export default function UserPage() {
                   </span>
                 )}
                 {props.relationship == "None" && (
-                  <span className={styles.closeFriendTag}>Regular Friend</span>
+                  <span className={styles.regularFriendTag}>
+                    Regular Friend
+                  </span>
                 )}
                 <h1 className={styles.infoType}>Email</h1>{" "}
                 <span className={styles.info}>{props.email}</span>

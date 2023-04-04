@@ -53,6 +53,18 @@
     font-family: 'Inter';
 }
 
+.regularFriendTag {
+    padding: 0 7px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    color: brown;
+    background-color: #B0CCC3;
+    border-radius: 21px;
+}
 
 .closeFriendTag {
     padding: 0 7px;
