@@ -1,8 +1,10 @@
 import styles from "./UserCard.module.css";
 import Link from "next/link";
 
+// component that shows a user's information on Friends Page
 function UserCard({ isLoading, name, relationship, email, phone }) {
   return isLoading ? (
+    // loading version when the data are not loaded yet
     <div className={styles.userCardLoading}>
       <div className={styles.loadingFirstRow}>
         <div className={styles.loadingFirstLeft}></div>
@@ -14,6 +16,7 @@ function UserCard({ isLoading, name, relationship, email, phone }) {
       </div>
     </div>
   ) : (
+    // loaded version when data finished loading
     <Link
       className={styles.link}
       href={{

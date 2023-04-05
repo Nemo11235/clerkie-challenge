@@ -1,7 +1,6 @@
 .home {
     display: flex;
-    align-items: start;
-    
+    align-items: start;    
 }
 
 .rightContainer {
@@ -21,11 +20,12 @@
 
 .welcomeMsg {
     position: absolute;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 26px;
     top: 525px;
     left: 869px;
     padding: 0;
     margin: 0;
+
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 26px;
 }

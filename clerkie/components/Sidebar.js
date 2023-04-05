@@ -2,7 +2,8 @@ import styles from "./Sidebar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-function Sidebar() {
+// side menu to navigate to different pages
+export default function Sidebar() {
   const router = useRouter();
 
   return (
@@ -32,5 +33,3 @@ function Sidebar() {
     </div>
   );
 }
-
-export default Sidebar;

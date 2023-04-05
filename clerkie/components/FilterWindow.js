@@ -1,33 +1,41 @@
 import { useState } from "react";
 import styles from "./FilterWindow.module.css";
 
+// pop up filter window when user clicks on the filter button on Friends Page
 const FilterWindow = ({
   setFilterOptions,
   selectedOptions: initialSelectedOptions,
   toggleFilterWindow,
 }) => {
+  // array that holds all selected filter options
   const [selectedOptions, setSelectedOptions] = useState(
     initialSelectedOptions
   );
 
+  // 2 filter options
   const categories = ["Close Friends", "Super Close Friends"];
 
+  // update the selected option when user click on the checkbox
   function toggleOption(option) {
     const isSelected = selectedOptions.includes(option);
+    // if the option is already selected, remove it
     if (isSelected) {
       setSelectedOptions(
         selectedOptions.filter((selectedOption) => selectedOption !== option)
       );
+      // otherwise, add it to the selected options
     } else {
       setSelectedOptions([...selectedOptions, option]);
     }
   }
 
+  // update the selected option array and close filter window
   function applyFiltersAndClose() {
     setFilterOptions(selectedOptions);
     toggleFilterWindow();
   }
 
+  // remove all selected option, for clear all button
   function clearFilter() {
     setSelectedOptions([]);
   }

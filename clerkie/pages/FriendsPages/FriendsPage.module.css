@@ -14,12 +14,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
+    
     height: 37px;
+    
     background: white;
+    
     border: 1px solid #ababab;
     border-radius: 30px;
+    
     cursor: pointer;
-    padding: 0 20px;
 }
 
 .filterBtn img {
@@ -31,6 +35,7 @@
     width: 0;
     height: 28px; 
     margin: 0 15px;
+    
     border: 1px solid #D7D7D7;
 }
 
@@ -42,23 +47,26 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 46px;
+    
     height: auto;
 }
 
 .filterContainer {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+      
     width: 1050px;
     height: 37px;
-    margin-bottom: 25px;
 }
 
 .filterWindow {
     position: absolute;
-    width: 1050px;
     margin-top: 47px;
+    
+    width: 1050px;
 }
 
 .clearAllBtn {

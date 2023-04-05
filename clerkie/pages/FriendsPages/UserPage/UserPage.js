@@ -1,14 +1,19 @@
 import Sidebar from "../../../components/Sidebar";
 import Header from "../../../components/Header";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import styles from "./UserPage.module.css";
 
+// extra page when user clicks on a UserCard, open another page to show all detail information of that user
 export default function UserPage() {
   const router = useRouter();
   const props = router.query;
 
   return (
     <div className={styles.root}>
+      <Head>
+        <title>User</title>
+      </Head>
       <Sidebar />
       <div className={styles.rightContainer}>
         <Header title="Detail Information" />

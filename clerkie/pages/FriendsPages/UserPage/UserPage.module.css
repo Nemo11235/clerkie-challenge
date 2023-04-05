@@ -17,27 +17,31 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+
     margin-top: 46px;
     height: auto;
 }
 
 
 .infoContainer {
-    width: 1050px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    width: 1050px;
 }
 
 .portraitContainer {
     display: flex;
     justify-content: center;
+
     width: 525px;
 }
 
 .portraitFrame{
     width: 200px;
     height: 200px;
+
     border-radius: 50%;
     border: 2px solid black;
   }
@@ -54,40 +58,49 @@
 }
 
 .regularFriendTag {
-    padding: 0 7px;
-    height: 21px;
     display: flex;
+    padding: 0 7px;
     justify-content: center;
     align-items: center;
+    
+    height: 21px;
+    
     font-weight: 600;
     font-size: 12px;
     color: brown;
+    
     background-color: #B0CCC3;
     border-radius: 21px;
 }
 
 .closeFriendTag {
-    padding: 0 7px;
-    height: 21px;
     display: flex;
+    padding: 0 7px;
     justify-content: center;
     align-items: center;
+    
+    height: 21px;
+    
     font-weight: 600;
     font-size: 12px;
     color: #3399FF;
+    
     background-color: #DFEFFF;
+    
     border-radius: 21px;
 }
 
 .superCloseFriendTag {
-    padding: 0 8.75px;
-    height: 21px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 8.75px;
+    
+    height: 21px;
     font-weight: 600;
     font-size: 12px;
     color: #19B444;
+    
     background-color: #DCFFE6;
     border-radius: 21px;
 }
