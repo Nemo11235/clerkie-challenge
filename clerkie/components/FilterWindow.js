@@ -2,18 +2,17 @@ import { useState } from "react";
 import styles from "./FilterWindow.module.css";
 
 // pop up filter window when user clicks on the filter button on Friends Page
-const FilterWindow = ({
+export default function FilterWindow({
   setFilterOptions,
-  selectedOptions: initialSelectedOptions,
+  initialSelectedOptions,
   toggleFilterWindow,
-}) => {
+}) {
   // array that holds all selected filter options
   const [selectedOptions, setSelectedOptions] = useState(
     initialSelectedOptions
   );
 
-  // 2 filter options
-  const categories = ["Close Friends", "Super Close Friends"];
+  const categories = ["Close Friends", "Super Close Friends"]; // 2 filter options
 
   // update the selected option when user click on the checkbox
   function toggleOption(option) {
@@ -88,6 +87,4 @@ const FilterWindow = ({
       </button>
     </div>
   );
-};
-
-export default FilterWindow;
+}

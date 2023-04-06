@@ -1,8 +1,15 @@
-import styles from "./UserCard.module.css";
 import Link from "next/link";
 
+import styles from "./UserCard.module.css";
+
 // component that shows a user's information on Friends Page
-function UserCard({ isLoading, name, relationship, email, phone }) {
+export default function UserCard({
+  isLoading,
+  name,
+  relationship,
+  email,
+  phone,
+}) {
   return isLoading ? (
     // loading version when the data are not loaded yet
     <div className={styles.userCardLoading}>
@@ -51,5 +58,3 @@ function UserCard({ isLoading, name, relationship, email, phone }) {
     </Link>
   );
 }
-
-export default UserCard;

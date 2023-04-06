@@ -1,20 +1,26 @@
+import { useState, useEffect } from "react";
+import Head from "next/head";
+
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import FilterWindow from "../../components/FilterWindow";
 import UserCard from "../../components/UserCard";
+import data from "../../public/users.json";
 import styles from "./FriendsPage.module.css";
-import Head from "next/head";
-import { useState, useEffect } from "react";
 
 export default function FriendsPage() {
-  // determin showing the filter window or not
-  const [showFilterWindow, setShowFilterWindow] = useState(false);
-  // selected filter options
-  const [selectedOptions, setFilterOptions] = useState([]);
-  // flag that data are loaded or not
-  const [isLoading, setIsLoading] = useState(true);
-  // user data from .json file
-  const [userData, setUserData] = useState([]);
+  // for UserCard
+  const [userData, setUserData] = useState([]); // user data from .json file
+
+  // for filter
+  const [showFilterWindow, setShowFilterWindow] = useState(false); // determin showing the filter window or not
+  const [selectedOptions, setFilterOptions] = useState([]); // selected filter options
+
+  // for loading
+  const loadAmount = 10; // amount of users for each load
+  const [visibleItems, setVisibleItems] = useState(loadAmount); // amount of useres display on the screen
+  const [hasMoreItem, setHasMoreItem] = useState(true); // flag, signify if all data is loaded
+  const [loadedItemAmount, setLoadedItemAmount] = useState(0); // amount of data that is loaded
 
   // open/close filter window
   const toggleFilterWindow = () => {
@@ -26,22 +32,45 @@ export default function FriendsPage() {
     setFilterOptions([]);
   }
 
-  // refresh the page after loading user info
+  // keep userData up to date
   useEffect(() => {
-    async function fetchUserData() {
-      const response = await fetch("/users.json");
-      const data = await response.json();
-      setUserData(data);
+    setUserData(data);
+  }, []);
+
+  // update the page when user scrolls to the bottom
+  function handleScroll() {
+    const scrollPosition = window.innerHeight + window.pageYOffset;
+    const bodyHeight = document.body.offsetHeight;
+    if (scrollPosition >= bodyHeight && hasMoreItem) {
+      if (visibleItems >= userData.length) {
+        setHasMoreItem(false);
+      }
+      loadMoreItems();
     }
+  }
 
-    fetchUserData();
-  }, []);
+  // load 10 more items onto the screen
+  function loadMoreItems() {
+    setVisibleItems((prev) => prev + loadAmount);
+    setTimeout(() => setLoadedItemAmount((prev) => prev + loadAmount), 1000);
+  }
 
-  // set a delay to show the loading animation of UserCard
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000);
+    setLoadedItemAmount(loadedItemAmount);
+    setVisibleItems(visibleItems);
+  }, []);
+  // keeps track of window scrolling event
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // load the first 10 items for 1 second for demonstration
+  const [loadedFirstBatch, setLoadedFirstBatch] = useState(false);
+  if (!loadedFirstBatch) {
+    setLoadedFirstBatch(true);
+    setTimeout(() => setLoadedItemAmount(loadAmount), 1000);
+  }
   return (
     <div className={styles.friendsPage}>
       <Head>
@@ -90,28 +119,24 @@ export default function FriendsPage() {
           {showFilterWindow && (
             <div className={styles.filterWindow}>
               <FilterWindow
-                selectedOptions={selectedOptions}
+                initialSelectedOptions={selectedOptions}
                 setFilterOptions={setFilterOptions}
                 toggleFilterWindow={toggleFilterWindow}
                 clearFilter={clearFilter}
               />
             </div>
           )}
-          {selectedOptions == 0 &&
-            userData.map((user) => (
-              <UserCard
-                isLoading={isLoading}
-                name={user.name}
-                relationship={user.relationship}
-                email={user.email}
-                phone={user.phoneNumber}
-              />
-            ))}
           {userData
-            .filter((user) => selectedOptions.includes(user.relationship))
-            .map((user) => (
+            .filter(
+              (user) =>
+                selectedOptions.length === 0 ||
+                selectedOptions.includes(user.relationship)
+            )
+            .slice(0, visibleItems)
+            .map((user, index) => (
               <UserCard
-                isLoading={isLoading}
+                key={index}
+                isLoading={index >= loadedItemAmount}
                 name={user.name}
                 relationship={user.relationship}
                 email={user.email}

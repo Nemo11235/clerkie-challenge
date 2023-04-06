@@ -1,7 +1,8 @@
-import Sidebar from "../../../components/Sidebar";
-import Header from "../../../components/Header";
 import { useRouter } from "next/router";
 import Head from "next/head";
+
+import Sidebar from "../../../components/Sidebar";
+import Header from "../../../components/Header";
 import styles from "./UserPage.module.css";
 
 // extra page when user clicks on a UserCard, open another page to show all detail information of that user

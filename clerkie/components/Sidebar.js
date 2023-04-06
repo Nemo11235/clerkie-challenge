@@ -1,6 +1,7 @@
-import styles from "./Sidebar.module.css";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import Link from "next/link";
+
+import styles from "./Sidebar.module.css";
 
 // side menu to navigate to different pages
 export default function Sidebar() {

@@ -1,7 +1,7 @@
 import Head from "next/head";
-import styles from "./index.module.css";
-import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
+import styles from "./index.module.css";
 
 export default function Home() {
   return (
