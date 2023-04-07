@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     width: 320px;
     
     background-color: #FFFFFF;
@@ -10,6 +10,14 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px 0;
 }
 
 .clearAllActive {
@@ -26,12 +34,12 @@
 }
 
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.title {
+    margin-left: 60px;
+    margin-right: 103px;
 
-    margin: 20px 0;
+    font-weight: 600;
+    font-size: 16px;   
 }
 
 .header img {
@@ -40,13 +48,6 @@
     cursor: pointer;
 }
 
-.title {
-    margin-left: 60px;
-    margin-right: 103px;
-
-    font-weight: 600;
-    font-size: 16px;   
-}
 
 .divider {
     width: 318px;
@@ -68,15 +69,6 @@
     color: #686868;
 }
 
-.filterOptionText {
-    height: 19px;
-
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 16px;
-}
-
-
 .filterOption {
     display: flex;
     width: 270px;
@@ -85,23 +77,12 @@
     margin-bottom: 25px;
 }
 
+.filterOptionText {
+    height: 19px;
 
-.btnApply {
-    width: 300px;
-    height: 45px;
-    padding: 0;
-    margin-bottom: 16px;
-    margin-top: 10px;
-    
     font-family: 'Inter';
     font-weight: 600;
     font-size: 16px;
-    color: white;
-    
-    background-color: #424242;
-
-    border-radius: 6px;
-    border: none;
 }
 
 .filterCheckbox {
@@ -130,4 +111,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btnApply {
+    width: 300px;
+    height: 45px;
+    padding: 0;
+    margin-bottom: 16px;
+    margin-top: 10px;
+    
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    
+    background-color: #424242;
+
+    border-radius: 6px;
+    border: none;
 }

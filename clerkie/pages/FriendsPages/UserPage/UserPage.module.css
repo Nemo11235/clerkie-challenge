@@ -22,7 +22,6 @@
     height: auto;
 }
 
-
 .infoContainer {
     display: flex;
     justify-content: space-between;
@@ -57,19 +56,18 @@
     font-family: 'Inter';
 }
 
-.regularFriendTag {
+.superCloseFriendTag {
     display: flex;
-    padding: 0 7px;
     justify-content: center;
     align-items: center;
+    padding: 0 8.75px;
     
     height: 21px;
-    
     font-weight: 600;
     font-size: 12px;
-    color: brown;
+    color: #19B444;
     
-    background-color: #B0CCC3;
+    background-color: #DCFFE6;
     border-radius: 21px;
 }
 
@@ -90,17 +88,18 @@
     border-radius: 21px;
 }
 
-.superCloseFriendTag {
+.regularFriendTag {
     display: flex;
+    padding: 0 7px;
     justify-content: center;
     align-items: center;
-    padding: 0 8.75px;
     
     height: 21px;
+    
     font-weight: 600;
     font-size: 12px;
-    color: #19B444;
+    color: brown;
     
-    background-color: #DCFFE6;
+    background-color: #B0CCC3;
     border-radius: 21px;
 }

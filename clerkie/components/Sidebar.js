@@ -8,7 +8,7 @@ export default function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className={styles.sidebar}>
+    <div className={styles.root}>
       <div className={styles.clerkieTab}>
         <img src="/clerkie-logo.png" alt="clerkie logo" />
         <span>Clerkie Challenge</span>

@@ -1,3 +1,91 @@
+.userCardLoading{
+    margin-bottom: 15px;
+    
+    width: 1050px;
+    height: 114px;
+    
+    border: 1px solid #D7D7D7;
+    border-radius: 6px;
+}
+
+
+.loadingFirstRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+    margin-left: 30px;
+    
+    width: 989px;
+}
+
+.loadingFirstLeft {
+    width: 295px;
+    height: 18px;
+
+    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
+    border-radius: 27px;
+}
+
+.loadingFirstRight {
+    width: 118px;
+    height: 17px;
+
+    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
+    border-radius: 27px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.loadingSecondRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 30px;
+    
+    width: 989px;
+}
+
+.loadingSecondLeft {
+    width: 340px;
+    height: 14px;
+
+    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
+    
+    border-radius: 27px;
+}
+
+.loadingSecondRight {
+    width: 84px;
+    height: 12px;
+
+    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
+    border-radius: 27px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+@keyframes colorTransfer {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.loadingFirstRight,
+.loadingSecondRight,
+.loadingFirstLeft,
+.loadingSecondLeft {
+    animation: colorTransfer 1s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+.link {
+    text-decoration: none;
+}
+
 .userCardLoaded {
     margin-bottom: 15px;
     
@@ -15,44 +103,21 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.userCardLoading{
-    margin-bottom: 15px;
-    
-    width: 1050px;
-    height: 114px;
-    
-    border: 1px solid #D7D7D7;
-    border-radius: 6px;
-}
-
 .firstLine {
     display: flex;
     margin-top: 32px;
     margin-left: 30px;
 }
 
+.name {
+    margin-right: 10px;
 
-.secondLine {
-    display: flex;
-    margin-top: 12px;
-    margin-left: 30px;
-
-    font-weight: 500;
-    font-size: 14px;
-    color: #ABABAB;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
 }
 
-.secondLine span {
-    display: flex;
-    margin-right: 7px;
-    justify-content: center;
-    align-items: center;
-}
-
-.middleDot {
-    width: 4px;
-    height: 4px;
-}
 
 .closeFriendTag {
     display: flex;
@@ -86,88 +151,25 @@
     border-radius: 21px;
 }
 
-.name {
-    margin-right: 10px;
-
-    font-family: 'Inter';
-    font-weight: 700;
-    font-size: 16px;
-    color: #000000;
-}
-
-.loadingFirstRow {
+.secondLine {
     display: flex;
-    justify-content: space-between;
-    margin-top: 36px;
+    margin-top: 12px;
     margin-left: 30px;
-    
-    width: 989px;
+
+    font-weight: 500;
+    font-size: 14px;
+    color: #ABABAB;
 }
 
-.loadingSecondRow {
+.secondLine span {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-left: 30px;
-    
-    width: 989px;
+    margin-right: 7px;
+    justify-content: center;
+    align-items: center;
 }
 
-.loadingFirstLeft {
-    width: 295px;
-    height: 18px;
-
-    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
-    border-radius: 27px;
+.middleDot {
+    width: 4px;
+    height: 4px;
 }
-
-.loadingFirstRight {
-    width: 118px;
-    height: 17px;
-
-    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
-    border-radius: 27px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.loadingSecondLeft {
-    width: 340px;
-    height: 14px;
-
-    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
-    
-    border-radius: 27px;
-}
-
-.loadingSecondRight {
-    width: 84px;
-    height: 12px;
-
-    background: linear-gradient(90deg, #EAEAEA 26.47%, rgba(234, 234, 234, 0.25) 100%);
-    border-radius: 27px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-@keyframes colorTransfer {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 0%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-  .loadingFirstRight,
-  .loadingSecondRight,
-  .loadingFirstLeft,
-  .loadingSecondLeft {
-    animation: colorTransfer 1s ease-in-out infinite;
-    background-size: 400% 100%;
-  }
-
-  .link {
-    text-decoration: none;
-  }
 

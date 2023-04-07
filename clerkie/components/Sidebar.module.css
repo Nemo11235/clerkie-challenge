@@ -1,4 +1,4 @@
-.sidebar {
+.root {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -66,18 +66,17 @@
   margin-right: 7px;
 }
 
+.link {
+  display: flex;
+  
+  text-decoration: none;
+  color: white;
+}
+
 
 .tab img {
   margin-right: 7px;
 
   width: 24px;
   height: 24px;
-}
-
-
-.link {
-  display: flex;
-  
-  text-decoration: none;
-  color: white;
 }
