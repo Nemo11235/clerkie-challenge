@@ -21,7 +21,7 @@ export default function FriendsPage() {
   const [visibleItems, setVisibleItems] = useState(loadAmount); // amount of useres display on the screen
   const [hasMoreItem, setHasMoreItem] = useState(true); // flag, signify if all data is loaded
   const [loadedItemAmount, setLoadedItemAmount] = useState(0); // amount of data that is loaded
-
+  const [loadedFirstBatch, setLoadedFirstBatch] = useState(false); // flag that forces the first 10 items load for 1 second for demo purpose
   // open/close filter window
   const toggleFilterWindow = () => {
     setShowFilterWindow(!showFilterWindow);
@@ -55,10 +55,6 @@ export default function FriendsPage() {
     setTimeout(() => setLoadedItemAmount((prev) => prev + loadAmount), 1000);
   }
 
-  useEffect(() => {
-    setLoadedItemAmount(loadedItemAmount);
-    setVisibleItems(visibleItems);
-  }, []);
   // keeps track of window scrolling event
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -66,7 +62,6 @@ export default function FriendsPage() {
   }, []);
 
   // load the first 10 items for 1 second for demonstration
-  const [loadedFirstBatch, setLoadedFirstBatch] = useState(false);
   if (!loadedFirstBatch) {
     setLoadedFirstBatch(true);
     setTimeout(() => setLoadedItemAmount(loadAmount), 1000);
@@ -82,13 +77,12 @@ export default function FriendsPage() {
         <div className={styles.dataContainer}>
           <div className={styles.filterContainer}>
             <button
-              className={styles.filterBtn}
-              onClick={toggleFilterWindow}
-              style={
+              className={
                 selectedOptions.length || showFilterWindow
-                  ? { backgroundColor: "#424242" }
-                  : {}
+                  ? styles.filterBtnActive
+                  : styles.filterBtn
               }
+              onClick={toggleFilterWindow}
             >
               <img
                 src={

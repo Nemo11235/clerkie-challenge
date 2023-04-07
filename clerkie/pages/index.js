@@ -13,12 +13,7 @@ export default function Home() {
       <Sidebar />
       <div className={styles.rightContainer}>
         <Header title="Home" />
-
-        <div className={styles.welcomeMsgContainer}>
-          <h1 className={styles.welcomeMsg}>
-            Welcome to the Clerkie Challenge!
-          </h1>
-        </div>
+        <h1 className={styles.welcomeMsg}>Welcome to the Clerkie Challenge!</h1>
       </div>
     </div>
   );
