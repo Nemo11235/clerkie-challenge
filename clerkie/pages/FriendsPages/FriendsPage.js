@@ -22,6 +22,8 @@ export default function FriendsPage() {
   const [hasMoreItem, setHasMoreItem] = useState(true); // flag, signify if all data is loaded
   const [loadedItemAmount, setLoadedItemAmount] = useState(0); // amount of data that is loaded
   const [loadedFirstBatch, setLoadedFirstBatch] = useState(false); // flag that forces the first 10 items load for 1 second for demo purpose
+  const [searchInput, setSearchInput] = useState(""); // user's input for search
+
   // open/close filter window
   const toggleFilterWindow = () => {
     setShowFilterWindow(!showFilterWindow);
@@ -66,6 +68,38 @@ export default function FriendsPage() {
     setLoadedFirstBatch(true);
     setTimeout(() => setLoadedItemAmount(loadAmount), 1000);
   }
+  function shouldDisplay(user) {
+    // if filter option is empty, check for the search box
+    if (selectedOptions.length === 0) {
+      if (searchInput == "") {
+        return true;
+      } else {
+        return user.name.toLowerCase().includes(searchInput.toLowerCase());
+      }
+      // if filter option is not empty, display what matches the filter option
+    } else {
+      if (searchInput == "") {
+        return selectedOptions.includes(user.relationship);
+      } else {
+        return (
+          selectedOptions.includes(user.relationship) &&
+          user.name.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      }
+    }
+    return true;
+  }
+
+  function inputOnChange(e) {
+    setSearchInput(e.target.value);
+    setVisibleItems(loadAmount);
+    setHasMoreItem(true);
+    setLoadedItemAmount(0);
+    setLoadedFirstBatch(false);
+    setLoadedFirstBatch(false);
+    setTimeout(() => setLoadedItemAmount(loadAmount), 1000);
+  }
+
   return (
     <div className={styles.friendsPage}>
       <Head>
@@ -109,6 +143,19 @@ export default function FriendsPage() {
             >
               Clear all
             </button>
+            <div className={styles.searchContainer}>
+              <img
+                src="/magglass.png"
+                alt="mag glass icon"
+                className={styles.magglassIcon}
+              ></img>
+              <input
+                type="text"
+                className={styles.search}
+                placeholder="Search"
+                onChange={(e) => inputOnChange(e)}
+              ></input>
+            </div>
           </div>
           {showFilterWindow && (
             <div className={styles.filterWindow}>
@@ -121,11 +168,9 @@ export default function FriendsPage() {
             </div>
           )}
           {userData
-            .filter(
-              (user) =>
-                selectedOptions.length === 0 ||
-                selectedOptions.includes(user.relationship)
-            )
+            .filter((user) => {
+              return shouldDisplay(user);
+            })
             .slice(0, visibleItems)
             .map((user, index) => (
               <UserCard

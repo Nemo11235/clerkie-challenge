@@ -126,4 +126,29 @@
     color: #FFFFFF;
 }
 
+.search {
+    width: 300px;
+    height: 46px;
 
+    border: 1px solid #ABABAB;
+    border-radius: 6px;
+}
+
+.searchContainer {
+    position: relative;
+}
+
+.magglassIcon {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 11px;
+}
+
+.search {
+    padding-left: 49px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+
+    color: #ABABAB;
+}
